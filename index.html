@@ -1,1 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description" content="Alesha Auton's AI Software Engineering portfolio featuring software and machine learning projects.">
+
+    <title>Alesha Auton | AI Software Engineering Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            padding: 18px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            color: white;
+            padding: 110px 8%;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero-label {
+            color: #93c5fd;
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #60a5fa;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 750px;
+            margin-bottom: 30px;
+            color: #dbeafe;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .primary {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .secondary {
+            border: 1px solid white;
+            color: white;
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 35px;
+            color: #111827;
+        }
+
+        .section-intro {
+            max-width: 750px;
+            font-size: 18px;
+            color: #4b5563;
+            margin-bottom: 35px;
+        }
+
+        .about {
+            max-width: 850px;
+        }
+
+        .about p {
+            font-size: 18px;
+            margin-bottom: 18px;
+        }
+
+        .project-section {
+            background: #eef4ff;
+        }
+
+        .project-card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            max-width: 1000px;
+        }
+
+        .project-card h3 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            font-size: 17px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 25px 0;
+        }
+
+        .tag {
+            background: #e0ecff;
+            color: #1e40af;
+            padding: 7px 13px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .stat {
+            background: #f3f4f6;
+            padding: 20px 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 22px;
+            color: #1e40af;
+            margin-bottom: 5px;
+        }
+
+        .stat span {
+            font-size: 14px;
+            color: #4b5563;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 18px;
+        }
+
+        .skill {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+            font-weight: bold;
+        }
+
+        .skill small {
+            display: block;
+            margin-top: 6px;
+            color: #6b7280;
+            font-weight: normal;
+        }
+
+        .learning {
+            background: #dbeafe;
+        }
+
+        .learning-list {
+            max-width: 800px;
+            padding-left: 25px;
+        }
+
+        .learning-list li {
+            margin: 14px 0;
+            font-size: 18px;
+        }
+
+        .contact {
+            text-align: center;
+            background: #0f172a;
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact p {
+            max-width: 650px;
+            margin: 0 auto 20px;
+            font-size: 18px;
+            color: #cbd5e1;
+        }
+
+        footer {
+            background: #020617;
+            color: #94a3b8;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 80px 8%;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">Alesha Auton</div>
+
+        <div>
+            <a href="#about">About</a>
+            <a href="#project">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#learning">Learning</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+
+        <div class="hero-label">
+            AI Software Engineering Student
+        </div>
+
+        <h1>
+            Building Practical
+            <span>AI & Software</span>
+            Projects
+        </h1>
+
+        <p>
+            I'm Alesha Auton, an AI Software Engineering student focused on
+            building practical software applications while developing my
+            programming, machine learning, and problem-solving skills.
+        </p>
+
+        <div class="buttons">
+            <a class="button primary" href="#project">
+                View My Project
+            </a>
+
+            <a class="button secondary"
+               href="https://github.com/autonbelle-boop"
+               target="_blank">
+                View GitHub
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<section id="about">
+    <div class="section-container">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <div class="about">
+
+            <p>
+                I'm currently studying AI Software Engineering and building
+                projects to develop real-world programming and machine
+                learning skills.
+            </p>
+
+            <p>
+                I believe in learning by building. Each project gives me an
+                opportunity to apply what I'm learning, solve problems, and
+                understand how software works in the real world.
+            </p>
+
+            <p>
+                I'm currently looking for paid internships and entry-level
+                opportunities where I can contribute, continue learning,
+                and gain professional experience in software engineering
+                and artificial intelligence.
+            </p>
+
+        </div>
+    </div>
+</section>
+
+<section id="project" class="project-section">
+
+    <div class="section-container">
+
+        <h2 class="section-title">
+            Featured Project
+        </h2>
+
+        <p class="section-intro">
+            My first portfolio project is a machine-learning web application
+            that demonstrates how Python, natural language processing, and
+            supervised machine learning can be combined into a working
+            software application.
+        </p>
+
+        <div class="project-card">
+
+            <h3>
+                AI Fake News Detector
+            </h3>
+
+            <p class="project-description">
+                A machine-learning web application that analyzes news
+                headlines and predicts whether they are likely to be fake
+                or real.
+            </p>
+
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Flask</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">NLP</span>
+                <span class="tag">TF-IDF</span>
+                <span class="tag">Logistic Regression</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">Pandas</span>
+            </div>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <strong>94.39%</strong>
+                    <span>Test Accuracy</span>
+                </div>
+
+                <div class="stat">
+                    <strong>44,898</strong>
+                    <span>Total Articles</span>
+                </div>
+
+                <div class="stat">
+                    <strong>35,918</strong>
+                    <span>Training Articles</span>
+                </div>
+
+                <div class="stat">
+                    <strong>8,980</strong>
+                    <span>Testing Articles</span>
+                </div>
+
+            </div>
+
+            <p>
+                The model uses TF-IDF text vectorization and Logistic
+                Regression to classify news headlines. The application is
+                built with Flask and displays the model's prediction and
+                confidence information.
+            </p>
+
+            <br>
+
+            <a class="button primary"
+               href="https://github.com/autonbelle-boop/fake-news-detector"
+               target="_blank">
+                View Project on GitHub
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<section id="skills">
+
+    <div class="section-container">
+
+        <h2 class="section-title">
+            Skills & Technologies
+        </h2>
+
+        <div class="skills">
+
+            <div class="skill">
+                Python
+                <small>Programming & automation</small>
+            </div>
+
+            <div class="skill">
+                Machine Learning
+                <small>Supervised learning</small>
+            </div>
+
+            <div class="skill">
+                Scikit-learn
+                <small>Machine learning tools</small>
+            </div>
+
+            <div class="skill">
+                Flask
+                <small>Python web applications</small>
+            </div>
+
+            <div class="skill">
+                TF-IDF
+                <small>Text feature extraction</small>
+            </div>
+
+            <div class="skill">
+                Pandas
+                <small>Data processing</small>
+            </div>
+
+            <div class="skill">
+                Git & GitHub
+                <small>Version control</small>
+            </div>
+
+            <div class="skill">
+                JavaScript / TypeScript
+                <small>Web programming</small>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="learning" class="learning">
+
+    <div class="section-container">
+
+        <h2 class="section-title">
+            Currently Learning
+        </h2>
+
+        <ul class="learning-list">
+
+            <li>Python programming and object-oriented programming</li>
+
+            <li>Artificial intelligence and machine learning</li>
+
+            <li>JavaScript and TypeScript</li>
+
+            <li>Asynchronous programming and APIs</li>
+
+            <li>Data structures and software design</li>
+
+            <li>Building practical AI software applications</li>
+
+        </ul>
+
+    </div>
+</section>
+
+<section id="contact" class="contact">
+
+    <div class="section-container">
+
+        <h2 class="section-title">
+            Let's Connect
+        </h2>
+
+        <p>
+            I'm interested in opportunities where I can contribute,
+            continue learning, and grow as a software engineer.
+        </p>
+
+        <a class="button primary"
+           href="https://github.com/autonbelle-boop"
+           target="_blank">
+            Visit My GitHub
+        </a>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 Alesha Auton | AI Software Engineering Portfolio
+</footer>
+
+</body>
+</html>
